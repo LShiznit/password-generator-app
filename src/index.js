@@ -81,7 +81,11 @@ function strengthCheck() {
       strengthBoxes[i].style.backgroundColor = strengths.deg3.at(1)
       strengthBoxes[i].style.outlineColor = strengths.deg3.at(1)
     }
-  } else if (10 < passLength.innerText && passLength.innerText <= 20) {
+  } else if (
+    10 < passLength.innerText &&
+    passLength.innerText <= 20 &&
+    ranTypes.length >= 2
+  ) {
     // STRONG
     strengthDisplay.innerText = strengths.deg4.at(2)
     for (let i = 0; i <= strengths.deg4.at(0); i++) {
