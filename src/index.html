@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Password generator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <!-- PASSWORD RESULT -->
+      <div class="password">
+        <div id="password">$úp3r $3kr37 Pa55w0rd</div>
+        <!-- PASSWORD COPY -->
+        <i id="clipboard" class="fa-regular fa-copy"></i>
+      </div>
+      <div class="main-card char-length">
+        <div class="setting">
+          <div class="char-label">
+            <p>Character Length</p>
+            <!-- RANGE VALUE -->
+            <div>10</div>
+          </div>
+          <!-- RANGE SLIDER -->
+          <!-- <input type="range" name="char-length" id="char-length" /> -->
+          <div class="track">
+            <div class="track-background"></div>
+            <div class="thumb"></div>
+          </div>
+        </div>
+        <!-- CHECK BOXES -->
+        <ul>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox" id="upperCase" />
+              <span></span>
+              Include Uppercase Letters
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox" id="lowerCase" />
+              <span></span>
+              Include Lowercase Letters
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox" id="numbers" />
+              <span></span>
+              Include Numbers
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox" id="symbols" />
+              <span></span>
+              Include Symbols
+            </label>
+          </li>
+        </ul>
+
+        <!-- STRENGTH BOX -->
+        <div id="strength">
+          <h2>Strength</h2>
+
+          <!-- STRENGTH READING -->
+          <div id="strength-degree">
+            <div class="strengthText">MEDIUM</div>
+
+            <div>
+              <div class="sBox"></div>
+              <div class="sBox"></div>
+              <div class="sBox"></div>
+              <div class="sBox"></div>
+            </div>
+          </div>
+        </div>
+        <!-- GENERATE BUTTON -->
+        <div class="btn-lrg">
+          Generate <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

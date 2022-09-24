@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ============================================
+VARIABLES
+============================================ */
+:root {
+  --bg-page: #0c0b11;
+  --bg-card: #24232c;
+  --bg-box: #24232c;
+  --bg-btn: #a4ffaf;
+  --signal-1: #f64a4a;
+  --signal-2: #f64a4a;
+  --signal-3: #f8cd65;
+  --signal-4: #a4ffaf;
+  --font: #e6e5ea;
+  --font-2: #000;
+  --font-3: #817d92;
+}
+
+/* NORMALIZE
+============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--font);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: none;
+  position: relative;
+
+  /* for show */
+  gap: 2rem;
+}
+
+.container {
+  width: 343px;
+}
+/* Typography 
+============================================ */
+h1 {
+  color: var(--font-3);
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Main Content
+============================================ */
+.password {
+  background-color: var(--bg-card);
+  display: flex;
+  align-content: center;
+  justify-content: right;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.password #password {
+  text-align: left;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.password i {
+  font-size: 1.4rem;
+  color: var(--bg-btn);
+}
+.password i:hover {
+  color: var(--font);
+  cursor: pointer;
+}
+
+.main-card {
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-card);
+}
+.main-card .char-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 0;
+}
+.main-card .char-label p {
+  font-weight: 700;
+}
+.main-card .char-label div:last-child {
+  color: var(--bg-btn);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.main-card input#char-length {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--bg-card);
+}
+li {
+  list-style-type: none;
+  padding: 0.5rem 0;
+}
+.main-card label {
+  padding: 0.4rem;
+  font-weight: 700;
+}
+/* CHECK BOXES */
+label.checkbox input[type='checkbox'] {
+  display: none;
+}
+label.checkbox span {
+  display: inline-block;
+  border: 2px solid var(--bg-btn);
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  vertical-align: text-bottom;
+  margin: 3px;
+  position: relative;
+}
+label.checkbox :checked + span {
+  background-color: var(--bg-btn);
+}
+label.checkbox :checked + span::after {
+  content: '\2714';
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+}
+.main-card #strength {
+  width: 100%;
+  background-color: #18171f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+.main-card #strength h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--font-3);
+}
+.main-card #strength #strength-degree {
+  display: flex;
+}
+.main-card #strength #strength-degree div:first-child {
+  font-size: 1.4rem;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+}
+.main-card #strength #strength-degree div:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+}
+.main-card #strength #strength-degree div .sBox {
+  width: 6px;
+  height: 20px;
+  outline: 2px solid var(--font);
+  margin: 0rem 0.3rem;
+}
+
+/* Buttons
+============================================ */
+.btn-lrg {
+  width: 100%;
+  background-color: var(--bg-btn);
+  color: var(--font-2);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 1.5rem 0 0.5rem 0;
+}
+.btn-lrg i {
+  padding-left: 1rem;
+}
+
+/* Agnostic Slider */
+/* ============================================ */
+.track {
+  width: 100%;
+  height: 6px;
+  background-color: #000;
+  margin: 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+.track-background {
+  width: 100%;
+  height: 6px;
+  background-color: var(--bg-btn);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  clip-path: inset(0 50% 0 0);
+}
+.thumb {
+  width: 26px;
+  height: 26px;
+  background-color: var(--font);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+}
+.thumb:hover {
+  background-color: #000;
+  border: 2px solid var(--bg-btn);
+}
+
+/* Input Check Boxes
+============================================ */
+/* input[type='checkbox'] {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+} */
+/* input[type='checkbox']:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  left: 0;
+  margin-right: 20px;
+  border: none;
+  border-radius: 2px;
+  background-color: white;
+  z-index: 1;
+} */
+/* input[type='checkbox']:checked:after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+} */
+
+/* Input Range Slider
+============================================ */
+/* FIREFOX */
+/* input[type='range']::-moz-range-track {
+  background: var(--bg-page);
+  border-radius: 0;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+}
+input[type='range']::-moz-range-progress {
+  background: var(--bg-btn);
+  height: 8px;
+}
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: grab;
+} */
+/* CHROME SAFARI */
+/* input[type='range']::-webkit-slider-runnable-track {
+  background: var(--bg-page);
+  border-radius: 0;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  box-shadow: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  background: var(--bg-btn);
+  height: 8px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: grab;
+} */
+/* MICROSOFT */
+/* input[type='range']::-ms-fill-lower {
+  background: var(--bg-page);
+  border-radius: 0;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+}
+input[type='range']::-ms-fill-lower {
+  background: var(--bg-btn);
+  height: 8px;
+}
+input[type='range']::-ms-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: grab;
+} */
+
+/* ************************************************** */
+/* ************************************************** */
+/* ************   MEDIA QUERY MOBILE    ************* */
+/* ************************************************** */
+/* ************************************************** */
+@media only screen and (min-width: 600px) {
+  html,
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    gap: 4rem;
+  }
+
+  .container {
+    width: 500px;
+  }
+  /* Typography 
+============================================ */
+  h1 {
+    color: var(--font-3);
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 4rem;
+  }
+
+  /* Main Content
+============================================ */
+  .password {
+    padding: 1.5rem 2rem;
+    margin: 1rem 0;
+  }
+  .main-card {
+    padding: 1rem 2rem;
+  }
+  .main-card .char-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 0;
+  }
+  .main-card label {
+    padding: 0.4rem 0;
+    font-weight: 700;
+  }
+  .main-card #strength {
+    padding: 1rem 2rem;
+  }
+  .main-card #strength #strength-degree div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+  }
+  .main-card #strength #strength-degree div .sBox {
+    width: 6px;
+    height: 20px;
+    outline: 2px solid var(--font);
+    margin: 0rem 0.3rem;
+  }
+}
