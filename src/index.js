@@ -104,16 +104,10 @@ function charCheck() {
   return charTypes
 }
 function generatePassword() {
-  // const keysA = Object.keys(charTypes)
-  // const ranTypes = keysA.filter((key) => charTypes[key] == true)
-  // ranTypes.forEach((el) => (charPool += validChar[el]))
   // RESET VARS ON CLICK
   password = ''
   charPool = ''
   // CHARACTER SET INCLUSION
-  // const keysA = Object.keys(charTypes)
-  // const ranTypes = keysA.filter((key) => charTypes[key] == true)
-
   strengthCheck()
   charCheck()
   ranTypes.forEach((el) => (charPool += validChar[el]))
